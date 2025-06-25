@@ -8,7 +8,7 @@ class LoginPage {
     this.loginButton = page.locator('button.custom-btn__active');
     this.errorNotification = page.locator('.custom-error-notification .el-notification__content');
     this.forgotPasswordButton = page.locator('button.custom-btn__link');
-    this.cancelButton = page.locator('button.custom-btn__link.auth-link');
+    this.cancelButton = page.locator('button.custom-btn__link.auth-link'); // Или в отдельный класс RecoveryForm
   }
 
   async goto() {
