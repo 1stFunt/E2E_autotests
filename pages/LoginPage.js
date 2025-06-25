@@ -6,9 +6,9 @@ class LoginPage {
     this.emailInput = page.locator('#sdo-login');
     this.passwordInput = page.locator('#sdo-password');
     this.loginButton = page.locator('button.custom-btn__active');
-    this.errorNotification = page.locator('text=Bad credentials.');
+    this.errorNotification = page.locator('.custom-error-notification .el-notification__content');
     this.forgotPasswordButton = page.locator('button.custom-btn__link');
-    this.recoverySubmitButton = page.locator('button.custom-btn__active');
+    this.cancelButton = page.locator('button.custom-btn__link.auth-link');
   }
 
   async goto() {
@@ -29,8 +29,8 @@ class LoginPage {
     await this.forgotPasswordButton.click();
   }
 
-  async isRecoveryButtonVisible() {
-    return await this.recoverySubmitButton.isVisible();
+  async isCancelButtonVisible() {
+    return await this.cancelButton.isVisible();
   }
 }
 

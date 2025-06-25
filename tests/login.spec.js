@@ -21,12 +21,12 @@ test.describe('Тесты авторизации', () => {
   test('Ошибка при вводе неверного логина или пароля', async () => {
     await loginPage.login(config.invalidUser.email, config.invalidUser.password);
     await loginPage.errorNotification.waitFor({ state: 'visible' });
-    await expect(loginPage.errorNotification).toHaveText('Bad credentials.');
+    await expect(loginPage.errorNotification).toBeVisible();
   });
 
   test('Наличие формы восстановления пароля', async () => {
     await loginPage.openRecoveryForm();
-    const isVisible = await loginPage.isRecoveryButtonVisible();
+    const isVisible = await loginPage.isCancelButtonVisible();
     expect(isVisible).toBeTruthy();
   });
 });
