@@ -2,9 +2,9 @@ class CompanyPage {
   constructor(page) {
     this.page = page;
     // Хлебная крошка для проверки, что это страница "Компания"
-    this.breadcrumbCompanies = page.locator('span.el-breadcrumb__item > span.el-breadcrumb__inner.is-link').nth(1);
+    this.breadcrumbCompanies = page.locator('.el-breadcrumb__inner.is-link').nth(1);
     // Ссылка на имя руководителя (переход на профиль)
-    this.managerLink = page.locator('div.description-value > a');
+    this.managerLink = page.locator('.description-value a');
   }
 
   async isCompanyPageVisible() {

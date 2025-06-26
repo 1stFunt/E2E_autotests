@@ -1,11 +1,11 @@
 class DashboardPage {
   constructor(page) {
     this.page = page;
-    this.educationCenterMenuHeader = page.locator('.el-sub-menu__title > span[data-cy="submenu-title-ms-education-center"]').locator('..');
-    this.companyMenuItem = page.locator('li.el-sub-menu.is-opened ul > li:nth-child(1)');
-    this.userAvatar = page.locator('.el-avatar.el-avatar--circle.cursor-pointer.avatar-icon-bg');
+    this.educationCenterMenuHeader = page.locator('[data-cy="submenu-title-ms-education-center"]').locator('..');
+    this.companyMenuItem = page.locator('.el-sub-menu.is-opened ul li').first();
+    this.userAvatar = page.locator('.el-avatar.cursor-pointer');
     // Добавим локатор для окна с email, которое появляется при клике на аватар
-    this.userEmailPopup = page.locator('div.font-bold.text-center');
+    this.userEmailPopup = page.locator('.font-bold.text-center');
   }
 
   async openEducationCenterMenu() {
